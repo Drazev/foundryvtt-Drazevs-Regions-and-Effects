@@ -20,7 +20,8 @@
     "maximum": "12"
   },
   "esmodules": [
-    "./src/init.js"
+    "./src/main.mjs",
+    "./css/init.css"
   ],
   "languages": [
     {
