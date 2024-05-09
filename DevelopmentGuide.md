@@ -85,7 +85,7 @@ Taken from core resources/app/client/data/documents/active-effect.js:1
 ### Creating Active Effects
 The ActiveEffect from foundry core defines `static async fromStatusEffect(statusId, options={})` as a way to create a status effect from a given ID listed in `CONFIG.statusEffects` defined by either foundry core or the system. Use this if you wish to apply something that already exists.
 
-Here is an example of creating a new effect and applying it to an actor. In this example we use the `static async create(data, operation={})` function on the ActiveEffects class to create a new active effect. The `data` field will be merged with the newly created document and saved. The operation field defines special instructions for the new document, such as assigning it a parent and making it embedded on that parent.
+Here is an example of creating a new effect and applying it to an actor. In this example we use the `static async create(data, operation={})` function on the ActiveEffects class to create a new active effect. The `data` field will be merged with the newly created document and saved. The `operation` field defines special instructions for the new document, such as assigning it a parent and making it embedded on that parent.
 
 [See: Creating Embedded Documents](https://foundryvtt.wiki/en/development/api/document)
 ```javascript
