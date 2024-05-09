@@ -1,0 +1,52 @@
+{
+  "title": "Drazev's Regions & Effects",
+  "id": "drazevs-regions-and-effects",
+  "esmodules": [
+    "init.mjs"
+  ],
+  "styles": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "static/lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "documentTypes": {},
+  "externals": [],
+  "compatibility": {
+    "minimum": 12,
+    "verified": 12,
+    "maximum": 12
+  },
+  "relationships": {
+    "systems": [],
+    "modules": []
+  },
+  "description": "This is a module for the FoundryVTT system designed to extend the Region and Active Effect functionality introduced in Foundry Core V12",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Jayson Mendoza (Drazev)",
+      "url": "https://www.jkmconsulting.ca",
+      "discord": "drazev"
+    }
+  ],
+  "url": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regions-and-Effects",
+  "persistentStorage": false,
+  "socket": false,
+  "manifest": "",
+  "download": "",
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "html",
+        "hbs",
+        "json"
+      ]
+    }
+  }
+}

@@ -1,8 +1,8 @@
 {
   "version": "0.1.0",
-  "id": "drazevs-regional-effects",
-  "title": "Drazevs Regional Effects",
-  "description": "This is a module for the FoundryVTT system designed to extend the Regional Effects functionality introduced in Foundry Core V12",
+  "id": "drazevs-regions-and-effects",
+  "title": "Drazev's Regions & Effects",
+  "description": "This is a module for the FoundryVTT system designed to extend the Region and Active Effect functionality introduced in Foundry Core V12",
   "authors": [
     {
       "name": "Jayson Mendoza (Drazev)",
@@ -10,7 +10,7 @@
       "discord": "drazev"
     }
   ],
-  "projectUrl": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regional-Effects",
+  "projectUrl": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regions-and-Effects",
   "entryPoints": {
     "main" : "init.mjs",
     "lang" : "static/lang/**"
