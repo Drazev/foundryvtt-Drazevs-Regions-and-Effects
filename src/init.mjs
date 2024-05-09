@@ -1,4 +1,4 @@
-import CONFIG from "static/constants.mjs";
+import CONFIG from "./static/constants.mjs";
 
 console.log("Initilizing module: ",CONFIG.moduleId);
 

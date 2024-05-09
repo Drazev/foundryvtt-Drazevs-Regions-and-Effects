@@ -13,19 +13,7 @@
   "projectUrl": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regional-Effects",
   "entryPoints": {
     "main" : "init.mjs",
-    "lang" : "static/lang/**",
-    "compendia" : {
-      "path": "./packs/**",
-      "type":"Macro",
-      "label" : {
-        "macros-gm" : "DRE Macros (GM)",
-        "macros-player" : "DRE Macros (Player)"
-      },
-      "folder" :  {
-        "label" : "Drazevs Regional Effects",
-        "color" : "#FF0000"
-      }
-    }
+    "lang" : "static/lang/**"
   },
   "profile": {
     "dev":{
@@ -39,30 +27,5 @@
   "dependencies": {
     "core" : [12,12,12]
   },
-  "packs": [
-    {
-      "name": "macros-gm",
-      "label": "DRE Macros (GM)",
-      "module": "drazevs-regional-effects",
-      "path": "./packs/macro-gm.db",
-      "type": "Macro",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      }
-    },
-    {
-      "name": "macros-player",
-      "label": "DRE Macros (Player)",
-      "module": "drazevs-regional-effects",
-      "path": "./packs/macro-player.db",
-      "type": "Macro"
-    }
-  ],
-  "flags" : {
-    "readme": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regional-Effects/blob/c8b53d5650ed00203ae84b0d4a556c254d168ade/README.md",
-    "bugs": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regional-Effects/issues",
-    "changelog": "https://github.com/JaysonMendoza/foundryvtt-Drazevs-Regional-Effects/releases/latest/"
-  }
-
+  "static" : "./static/**"
 }

@@ -1,8 +1,5 @@
-import ModuleFile from '../../module.json'
 const CONFIG = {
-    moduleId : ModuleFile.id,
-    moduleName : ModuleFile.title,
-    moduleVersion: ModuleFile.version
+    moduleId : "drazevs-regional-effects"
 }
 
 export default CONFIG;
