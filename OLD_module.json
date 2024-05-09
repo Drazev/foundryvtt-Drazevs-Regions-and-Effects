@@ -20,7 +20,7 @@
     "maximum": "12"
   },
   "esmodules": [
-    "src/main.ts"
+    "src/init.mjs"
   ],
   "languages": [
     {
