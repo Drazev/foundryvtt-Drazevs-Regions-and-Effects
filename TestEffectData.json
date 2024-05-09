@@ -1,0 +1,276 @@
+{
+    "_id": "8rP3gwmXVTgZqYZE",
+    "flags": {
+        "drazevs-regional-effects.testField":99
+    },
+    "changes": [
+        {
+            "key": "system.bonuses.abilities.save",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.mwak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.msak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.rsak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.rwak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        }
+    ],
+    "disabled": true,
+    "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "rounds": 10,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+    },
+    "origin": "Item.kZZAZ6kp9YzgPQEe",
+    "tint": "#ffff00",
+    "transfer": false,
+    "name": "Test Bless",
+    "description": "This is a test of bless from a template for DAE",
+    "statuses": [],
+    "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.321",
+        "systemId": "dnd5e",
+        "systemVersion": "3.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+    },
+    "img": "icons/magic/control/buff-flight-wings-blue.webp",
+    "type": "base",
+    "system": {}
+}
+
+ActiveEffect.create({
+    "_id": "8rP3gwmXVTgZqYZE",
+    "flags": {
+        "drazevs-regional-effects.isModuleSourced": true,
+        "drazevs-regional-effects.ModuleMajorVersion": "1",
+    },
+    "changes": [
+        {
+            "key": "system.bonuses.abilities.save",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.mwak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.msak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.rsak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        },
+        {
+            "key": "system.bonuses.rwak.attack",
+            "mode": 2,
+            "value": "1d4",
+            "priority": null
+        }
+    ],
+    "disabled": false,
+    "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "rounds": 10,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+    },
+    "origin": "Item.kZZAZ6kp9YzgPQEe",
+    "tint": "#ff0000",
+    "transfer": false,
+    "name": "Test Bless",
+    "description": "This is a test of bless from a template for DRE",
+    "statuses": [
+        "flying"
+    ],
+    "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.321",
+        "systemId": "dnd5e",
+        "systemVersion": "3.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+    },
+    "img": "icons/magic/control/buff-flight-wings-blue.webp",
+    "type": "base",
+    "system": {}
+}, {
+    parent: fromUuidSync('Actor.Vcld2aYB5E9uPSdi')
+  });
+
+  {
+    "name": "Ocdnst Noteworthy",
+    "type": "character",
+    "sort": 500000,
+    "img": "PlayerImages/Punch.jpg",
+    "_id": "Vcld2aYB5E9uPSdi",
+    "effects": [
+        {
+            "name": "Burning Acid",
+            "img": "icons/svg/acid.svg",
+            "_id": "97XtCfDOoq0pBBcq",
+            "type": "base",
+            "system": {},
+            "changes": [
+                {
+                    "key": "system.attributes.movement.walk",
+                    "mode": 5,
+                    "value": "10",
+                    "priority": null
+                }
+            ],
+            "disabled": true,
+            "duration": {
+                "startTime": 79861255047,
+                "seconds": 30,
+                "combat": null,
+                "rounds": null,
+                "turns": null,
+                "startRound": null,
+                "startTurn": null
+            },
+            "description": "<p>test</p>",
+            "origin": null,
+            "tint": "#ffffff",
+            "transfer": false,
+            "statuses": [
+                "flying",
+                "ethereal"
+            ],
+            "flags": {},
+            "_stats": {
+                "compendiumSource": null,
+                "duplicateSource": null,
+                "coreVersion": "12.321",
+                "systemId": "dnd5e",
+                "systemVersion": "3.1.2",
+                "createdTime": 1715105570659,
+                "modifiedTime": 1715132989784,
+                "lastModifiedBy": "RCjTTRIcOUdAPQyv"
+            }
+        },
+        {
+            "_id": "M7w6uXs0rEb3kvZx",
+            "flags": {
+                "drazevs-regional-effects": {
+                    "isModuleSourced": true,
+                    "ModuleMajorVersion": "1"
+                }
+            },
+            "changes": [
+                {
+                    "key": "system.bonuses.abilities.save",
+                    "mode": 2,
+                    "value": "1d4",
+                    "priority": null
+                },
+                {
+                    "key": "system.bonuses.mwak.attack",
+                    "mode": 2,
+                    "value": "1d4",
+                    "priority": null
+                },
+                {
+                    "key": "system.bonuses.msak.attack",
+                    "mode": 2,
+                    "value": "1d4",
+                    "priority": null
+                },
+                {
+                    "key": "system.bonuses.rsak.attack",
+                    "mode": 2,
+                    "value": "1d4",
+                    "priority": null
+                },
+                {
+                    "key": "system.bonuses.rwak.attack",
+                    "mode": 2,
+                    "value": "1d4",
+                    "priority": null
+                }
+            ],
+            "disabled": false,
+            "duration": {
+                "startTime": 79861255047,
+                "seconds": 60,
+                "rounds": 10,
+                "combat": null,
+                "turns": null,
+                "startRound": null,
+                "startTurn": null
+            },
+            "origin": "Item.kZZAZ6kp9YzgPQEe",
+            "tint": "#ff0000",
+            "transfer": false,
+            "name": "Test Bless",
+            "description": "This is a test of bless from a template for DRE",
+            "statuses": [
+                "flying"
+            ],
+            "_stats": {
+                "compendiumSource": null,
+                "duplicateSource": null,
+                "coreVersion": "12.321",
+                "systemId": "dnd5e",
+                "systemVersion": "3.1.2",
+                "createdTime": 1715186162726,
+                "modifiedTime": 1715186162726,
+                "lastModifiedBy": "RCjTTRIcOUdAPQyv"
+            },
+            "img": "icons/magic/control/buff-flight-wings-blue.webp",
+            "type": "base",
+            "system": {}
+        }
+    ],
+    "_stats": {
+        "systemId": "dnd5e",
+        "systemVersion": "3.1.2",
+        "coreVersion": "12.321",
+        "createdTime": 1700097680288,
+        "modifiedTime": 1714614000173,
+        "lastModifiedBy": "RCjTTRIcOUdAPQyv",
+        "compendiumSource": null,
+        "duplicateSource": null
+    }
+}
