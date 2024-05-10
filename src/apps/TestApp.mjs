@@ -1,15 +1,11 @@
-const CONFIG = {
-    moduleId : "drazevs-regions-and-effects",
-    moduleBase: "modules/drazevs-regions-and-effects"
-};
-
-const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+import CONFIG from "../constants.mjs";
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
 //See {@link https://foundryvtt.wiki/en/development/api/applicationv2}
 /**
  * [ApplicationV2 API]{@link https://foundryvtt.com/api/v12/classes/foundry.applications.api.ApplicationV2.html}
  */
 
-class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
+export default class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
     
     //Instance of Foundryvtt Type [ApplicationConfiguration]{@link https://foundryvtt.com/api/v12/interfaces/foundry.applications.types.ApplicationConfiguration.html}
     static DEFAULT_OPTIONS = {
@@ -41,7 +37,7 @@ class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
             "title" : "My title",
             "text" : "my text is here!",
             "inputBoxText" : ""
-        };
+        }
 
     }
 
@@ -58,7 +54,7 @@ class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
     }
 
     updateText(event) {
-        console.log("value",event.target.value);
+        console.log("value",event.target.value)
         console.log("Action Fired 'updateText', event: ", event, ", target: ", event.target, ", value: ", event.target.value);
         console.log("class instance",this); //The 'this' value is bound to the specific instance of the class, so this is an oddity.
         this.data.inputBoxText = event.target.value;
@@ -81,7 +77,7 @@ class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
         console.log("Preparing context",partId,newContext);
         console.log("Parts:",TestApp.PARTS);
         return newContext;
-    }
+;    }
 
     /**
      * Here we setup listeners on elements that are not for click events. 
@@ -110,16 +106,3 @@ class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
         // this._onSubmitForm(this.options.form,event);
     }
 }
-
-console.log("Initilizing module: ",CONFIG.moduleId);
-
-Hooks.once("init",() => {
-    console.log("Init code for ",CONFIG.moduleId);
-});
-
-Hooks.once("ready",() => {
-    console.log("Ready code for the module ",CONFIG.moduleId);
-    const testApp = new TestApp();
-    testApp.render(true);
-});
-//# sourceMappingURL=init.mjs.map

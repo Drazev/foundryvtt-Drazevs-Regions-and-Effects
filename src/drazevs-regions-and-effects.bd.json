@@ -27,5 +27,5 @@
   "dependencies": {
     "core" : [12,12,12]
   },
-  "static" : "./static/**"
+  "static" : "static/**"
 }
