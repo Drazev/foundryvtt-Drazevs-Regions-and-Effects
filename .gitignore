@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-drazevs-regional-effects
+drazevs-regions-and-effects
 
 node_modules
 dist
