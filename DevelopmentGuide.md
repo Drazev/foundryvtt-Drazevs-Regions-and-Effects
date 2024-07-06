@@ -1,5 +1,80 @@
 # Guide
 
+## Regions  and Region Behavior API
+
+### How it works as of V12
+
+#### class [RegionDocument](https://foundryvtt.com/api/v12/classes/client.RegionDocument.html)
+A region is a mixin of `CanvasDocument` that contains data about it's canvas attributes. It is also a `BaseRegion` which are responsible for manageing the lifecycle and of `RegionBehavior`'s and `RegionEvent`'s. `RegionBehavior`'s are contained as a property including all state data while `RegionEvent`'s are created as modified `SocketEvent`'s and sent to each active  `RegionBehavior` contained in the Region that is subscribed to that RegionEvent type.
+
+It's static functions implement the handlers for `RegionDocument`'s to use the Canvas Api for subscribed events such and inturrprut them as  `RegionEvent`'s that can be dispatched by individual region instances event handlers.
+
+#### class [RegionEvent](https://foundryvtt.com/api/v12/interfaces/client.RegionEvent.html)
+This is a transient data structure that includes event data 
+
+#### class [RegionBehavior](https://foundryvtt.com/api/v12/classes/client.RegionBehavior.html)
+This class is a `Document` responsible for implementing the behavior of a type that is part of its data model defined in `RegionBehaviorType`. This class is more a wrapper around a `RegionBehaviorType`. 
+
+The default of behavior `async _handleRegionEvent(event)` is that it will act on the associated `RegionBehaviorType` subtype that is in context in the following order (It's accessed dynamically by the instanceOfBehaviorVariable.constructor to get the class of the instance and call its static properties).
+
+1) Static `RegionBehaviorType` Events - Behaviors that belong to the static type and their associated callback functions. Generally these are events that target the game system.
+2) Instance `Region Behavior Type` Events - Behaviors that belong to the type instance. These are specific to that instance and normally target some property set when it was created.
+
+#### class [RegionBehaviorType](https://foundryvtt.com/api/v12/classes/foundry.data.foundry_data_regionBehaviors.RegionBehaviorType.html)
+This class represents is a deceptive mix of data model and type specific behavior. It contains the subscribed triggers and handlers for them. 
+
+The static `events` variable is a set of event names and their associated `EventBehaviorStaticHandler`'s that implement behaviors that are shared by all `RegionBehaviorTypes` of this subtype. 
+
+The `events` property is a set of event types that have subscribed to the instance based handler for this event subtype. Through the `asyc _handleRegionEvent(event)` function on the subtype any instance related behaviors are implemented.
+
+#### class [RegionConfig](https://foundryvtt.com/api/v12/classes/foundry.applications.sheets.RegionConfig.html)
+This is the application is a `DocumentSheetV2` responsible for rendering and controlling the workflow for managing a `RegionDocument` and it's `RegionBehavior`'s. 
+
+### Design Objectives
+
+To enable our module to create new behavior types and use them within the existing system we will need to design with the following goals.
+1) The workflow as familar as possible to the base Regional Effects workflow.
+2) Regions should be left alone if possible so that they work regardless if the module is active.
+3) Behavior Types unique to the module should fully support the normal Behavior API and workflow so that they can continue to work even after the module is removed, even if they cannot be created after that point.
+4) Custom sheets should be used to augment the workflow and coordinate the native and module specific options in the same  UI. 
+
+### Design
+
+#### DreRegionConfigSheet
+This sheet will replace the default sheet to augment the region configureation workflow for the module. It should fully support the original workflow elements and re-use their sheet parts if possible to keep things familiar. It may present and organize the elements to be more user friendly and enable interaction with module specific elements.
+
+The sheets should be treated as the view and should not persist between  uses.
+
+#### DreToggleBehaviorSheet
+This will enhance the Enable/Disable behavior workflow so they can select a behavior from the same scene. It should filter for the current RegionBehavior first then also include others.
+
+#### DreBehaviorType
+This extends foundry.data.regionBehaviors.RegionBehaviorType and defines a new behavior and it's events which work within the existing region system. It will use flags attached to the sheet to persist any data specific to that behavior's instance. 
+
+##### Possible Behavior Types
+Note: Dre Can add event and region states which can be used by behaviors to make decisions. This is done using flags.
+
+###### Active Effect
+This behavior wraps an active effect by collecting and providing any information or functionality required to have it trigger on some target group. Active effects are normally attached to an item and associated with an actor, so this wrapper needs to sort out how an orphan active effect will work.
+
+###### Item Trigger
+This behavior wraps an item and determines how it's used and what it targets. It needs to sort out things like who owns the item if anyone, how the item should ber used, who it targets, how to handle consumable elements, and which actor should be used as the source if any. It will also need to handle if the item is being used as a reference to create an effect, or if it will persist afterwards.
+
+###### Region Trigger
+Trigger another region after this one concludes.
+
+###### Encounter Trigger
+Create or Modify an encounter. Encounter could add tokens to a combat, begin it, and also potentially change their visibility or disposition towards the players.
+
+###### Spawn or Despawn Tokens
+Spawn or despawn tokens to the scene. Uses a 'spawn point' shape which is assigned an id that can be referenced by this behavior. 
+
+###### Chat Message
+Send a message via chat card to specific players or a group of players.
+
+###### Play Animation
+Plays an animation on the scene at a specific location for some duration. The behavior type has a property for duration and toggle state. If duration is 0 it will remain in a loop while the animatino remains in an active state. Created animations should be owned by the behavior instance and is it to manage its lifecycle. The behavior should be prepared to handle the case where it was manually deleted.
+
 ## Active Effects API
 
 ### Active Effect Config Data
