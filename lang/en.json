@@ -1,0 +1,19 @@
+{
+    "test1":"test1",
+    "test2":"test2",
+    "TYPES" : {
+        "RegionBehavior" : {
+            "drazevs-regions-and-effects.DreRegionBehaviorBaseType":"Test Dre Behavior Type"
+        }
+    },
+    "DRE.BEHAVIOR" : {
+        "BASE" : {
+            "FIELDS" : {
+                "uuid" : {
+                    "label" : "test label",
+                    "hint" : "test hint"
+                }
+            }
+        }
+    }
+}

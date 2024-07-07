@@ -1,10 +1,5 @@
 {
-  "devDependencies": {
-    "rollup-config-badger-den": "^1.1.1"
-  },
-  "scripts": {
-    "dev": "rollup -c node:rollup-config-badger-den --config-den src/drazevs-regions-and-effects:dev"
-  },
+  "scripts": {},
   "dependencies": {
     "rollup": "^4.17.2"
   }

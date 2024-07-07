@@ -1,6 +1,6 @@
 const CONFIG = {
-    moduleId : "%config.id%",
-    moduleBase: "modules/%config.id%"
+    moduleId : "drazevs-regions-and-effects",
+    moduleBase: "modules/drazevs-regions-and-effects/src"
 }
 
 export default CONFIG;
