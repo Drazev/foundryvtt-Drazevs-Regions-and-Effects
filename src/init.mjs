@@ -1,24 +1,33 @@
-import {default as LOCALCONFIG} from "./constants.mjs";
+import {MODULE_ID} from "./constants.mjs";
 import TestApp from './apps/TestApp.mjs'
 import DreRegionBehaviorBaseType from "./model/DreRegionBehaviorBaseType.mjs";
+import DreRegionBehaviorItemType from "./model/DreRegionBehaviorItemType.mjs";
 
-console.log("Initilizing module: ",LOCALCONFIG.moduleId);
+console.log("Initilizing module: ",MODULE_ID);
 
 Hooks.once("init",() => {
-    console.log("Init code for ",LOCALCONFIG.moduleId);
+    console.log("Init code for ",MODULE_ID);
     console.log("init this",this)
     console.log("config",CONFIG)
     console.log("check object to assign",CONFIG?.RegionBehavior?.dataModels)
-
+    
     //The keys of this field must match the TYPES key assigned to the class for localization to work on dialogue windows
     Object.assign(CONFIG.RegionBehavior.dataModels,{
-        "drazevs-regions-and-effects.DreRegionBehaviorBaseType" : DreRegionBehaviorBaseType
+        [`${MODULE_ID}.DreRegionBehaviorItemType`] : DreRegionBehaviorItemType
     })
 });
 
 Hooks.once("ready",() => {
-    console.log("Ready code for the module ",LOCALCONFIG.moduleId);
+    console.log("Ready code for the module ",MODULE_ID);
     const testApp = new TestApp();
     console.log("check object to assign",CONFIG?.RegionBehavior?.dataModels)
     testApp.render(true);
+});
+
+Hooks.on('renderRegionBehaviorConfig',(app,html,data) =>{
+    if(!app.document.type.includes(`${MODULE_ID}.DreRegionBehavior`)) {
+        return;
+    }
+    console.log("DRE region behavior config rendered!");
+    //todo: bind the instance listeners to the form. This should be delegated to a class that understands region behavior config with some type specific validation
 });

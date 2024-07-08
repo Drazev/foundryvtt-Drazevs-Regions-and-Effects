@@ -16,7 +16,7 @@
   "packFolders": [],
   "documentTypes": {
     "RegionBehavior" : {
-      "DreRegionBehaviorBaseType" : {}
+      "DreRegionBehaviorItemType" : {}
     }
   },
   "externals": [],

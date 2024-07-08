@@ -1,4 +1,4 @@
-import CONFIG from "../constants.mjs";
+import {MODULE_BASE_PATH} from "../constants.mjs";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
 //See {@link https://foundryvtt.wiki/en/development/api/applicationv2}
 /**
@@ -22,7 +22,7 @@ export default class TestApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
     static PARTS = {
         form : {
-            template : CONFIG.moduleBase+'/static/templates/TestApp.hbs'
+            template : `${MODULE_BASE_PATH}/static/templates/TestApp.hbs`
         }
     }
 
