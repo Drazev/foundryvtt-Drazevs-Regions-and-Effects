@@ -2,7 +2,7 @@
   "title": "Drazev's Regions & Effects",
   "id": "drazevs-regions-and-effects",
   "esmodules": [
-    "src/init.mjs"
+    "init.js"
   ],
   "styles": [],
   "languages": [

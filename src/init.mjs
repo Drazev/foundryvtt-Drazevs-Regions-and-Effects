@@ -1,5 +1,5 @@
 import {MODULE_ID} from "./constants.mjs";
-import TestApp from './apps/TestApp.mjs'
+import TestApp from './sheets/TestApp.mjs'
 import DreRegionBehaviorBaseType from "./model/DreRegionBehaviorBaseType.mjs";
 import DreRegionBehaviorItemType from "./model/DreRegionBehaviorItemType.mjs";
 
@@ -28,6 +28,6 @@ Hooks.on('renderRegionBehaviorConfig',(app,html,data) =>{
     if(!app.document.type.includes(`${MODULE_ID}.DreRegionBehavior`)) {
         return;
     }
-    console.log("DRE region behavior config rendered!");
+    console.log("DRE region behavior config rendered!",app,html,data);
     //todo: bind the instance listeners to the form. This should be delegated to a class that understands region behavior config with some type specific validation
 });

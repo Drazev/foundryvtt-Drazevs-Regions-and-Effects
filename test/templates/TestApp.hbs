@@ -1,0 +1,31 @@
+<div>
+    {{{log "DRE hbs rendering started."}}}
+    <h1>{{title}}</h1>
+    <p>{{text}}</p>
+    <div>
+        <h3>Input Box Text</h3>
+        <p>{{inputBoxText}}</p>
+    </div>
+    <div>
+        <h3>Input Text to Appear Above</h3>
+        <input type="text" class="js-testTextSelector"/>
+    </div>
+    <div>
+        <h3>Test Button</h3>
+        <button type="button" data-action="testAction">Test Action</button>
+    </div>
+    <div>
+        <h3>Effect Source</h3>
+        <p>The source will be the origin of the effect when it's placed on targets. By default this will be the region's environment.</p>
+        <div>
+            <div class="js-source-drop-selector">
+                
+                <img src={{sourceImg}} />
+            </div>
+            <div>
+                <p>Item description</p>
+            </div>
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+</div>

@@ -1,3 +1,19 @@
+# Develop and Contribute
+## Requirements
+> [!IMPORTANT]
+> You need `nodejs:v20.12` or later since some build script's use new features that appear in that version. 
+
+## Code Style Guidelines
+
+## Design
+
+## Making a PR Request
+
+## Gaining Recognition
+When you add features or resolve issues I will recognize you in the patch notes and change log. 
+
+After you have made some contributions if you want to be a regular part of development have a chat with me so we can make sure we are aligned. If we can work together then I'll recognize you as a contributor. If you at any point cease to be a contributor I'll still recognize you as a former contributor. 
+
 # Guide
 
 ## Regions  and Region Behavior API
