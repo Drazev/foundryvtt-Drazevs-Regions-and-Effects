@@ -5,6 +5,40 @@
 
 ## Code Style Guidelines
 
+## Project Structure
+
+```
+.
+├── public //These are not modified and copied directly to build
+│   ├── module.json //This is the module config loaded by Foundry before the game instance is lanuched
+│   ├── lang //Place your localization json files here
+│   ├── packs //Place packs here
+│   └── templates //These are the main templates for handlebars or any other templating engine
+│       └── parts //Partial tempaltes that are used by main templates go here.
+└── src //Code that is mutated goes here. When we build it will only use things included by the entrypoints
+│   ├──  apps //Place base application classes here
+│   ├──  css //Style sheets go here
+│   ├──  model //If we add anything to the data model like types, they go here
+│   ├──  services //Any scripts that are running at all times go here. Keep this minimal
+│   ├──  sheets //All sheets which extend applications and are designed to modify some document. These are entrypoints.
+│   |   └── Parts //Parts of a sheet, used by primary sheets to construct a view. These are not entrypoints.
+│   ├──  constants.mjs //Declare any module wide constants here
+│   ├──  Dre_Errors.mjs //This is where common error classes have been declared for debugging
+│   └── init.mjs //This is the first script called to load the module
+├── vite.config.js Configures vite engine normal, including build mode
+├── vite.dev.config.js //Configures vite development build mode used for testing
+└── vite.helpers.js //Helper functions used during the build process. This uses Nodejs.
+```
+
+### Important Notes
+### Entrypoints
+The vite build script will build and include only code that is used by an entrypoint. Since we are making a module for Foundryvtt there are multipole entrypoints we need to consider since anything we register with foundry that can be called to start some process is an entrypoint to our module.  Anything we have declared in `module.json` that refers to something in our module has the potential to be called independenly by foundry and should be considered an entry point.
+
+The  `init.mjs` that we have identified in our `module.json` under the `esmodules` key is an entrypoint since they are called by foundry when our module loads. We also register sheets and types to our module which should also be considered entrypoints.
+
+As a result our build script will walk the `src/model` and `src/sheets` folder and consider any valid scripts in that directory an entrypoint.
+
+
 ## Design
 
 ## Making a PR Request

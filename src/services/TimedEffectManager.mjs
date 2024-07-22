@@ -15,7 +15,7 @@
  */
 
 /**
- * @typedef {import('../model/types.mjs').DurationDateTimeData} DurationDateTimeData
+ * @typedef {import("../typedefs/types.mjs").DurationDateTimeData} DurationDateTimeData
  */
 
 /**

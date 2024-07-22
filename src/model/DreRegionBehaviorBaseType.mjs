@@ -4,9 +4,9 @@ const { RegionBehaviorType } = foundry.data.regionBehaviors;
 const { SetField, StringField, DocumentUUIDField } = foundry.data.fields;
 
 /**
- * @typedef {import("./foundryTypeDefs.mjs").DataFieldOptions} DataFieldOptions
- * @typedef {import("./foundryTypeDefs.mjs").SetField} SetField
- * @typedef {import("./foundryTypeDefs.mjs").StringField} StringField
+ * @typedef {import("../typedefs/foundryTypeDefs.mjs").DataFieldOptions} DataFieldOptions
+ * @typedef {import("../typedefs/foundryTypeDefs.mjs").SetField} SetField
+ * @typedef {import("../typedefs/foundryTypeDefs.mjs").StringField} StringField
  */
 
 /**

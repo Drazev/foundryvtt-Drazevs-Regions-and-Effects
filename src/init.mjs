@@ -1,5 +1,6 @@
 import {MODULE_ID} from "./constants.mjs";
 import TestApp from './sheets/TestApp.mjs'
+import ReactBaseApplication from './apps/ReactBaseApplication'
 import DreRegionBehaviorBaseType from "./model/DreRegionBehaviorBaseType.mjs";
 import DreRegionBehaviorItemType from "./model/DreRegionBehaviorItemType.mjs";
 
@@ -20,8 +21,9 @@ Hooks.once("init",() => {
 Hooks.once("ready",() => {
     console.log("Ready code for the module ",MODULE_ID);
     const testApp = new TestApp();
+    const app = new ReactBaseApplication();
     console.log("check object to assign",CONFIG?.RegionBehavior?.dataModels)
-    testApp.render(true);
+    app.render(true);
 });
 
 Hooks.on('renderRegionBehaviorConfig',(app,html,data) =>{
